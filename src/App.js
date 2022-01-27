@@ -3,27 +3,6 @@ import './App.css';
 
 function App() {
 
-  let contador = 1;
-
-  contador++ ;
-  console.log(contador);
-
-  let edad = 18;
-
-  if(edad >= 18) {
-    console.log("es mayor de edad") :
-    {else if{ ( edad > 0 && edad 18)
-    }else{
-    console.log("es menor de edad");
-  }
-  
-  edad >= 18 ? console.log("esmayo de edad") :
-  ( edad > 0 && edad < 18) ? console.log("es menor de edad")
-  : console.log("es menor de edad");
-
-  mensaje = `Juean puede pasar al boliche ya que tiene" ${edad} "y puede acceder a los tragos en algohol`
-  
-  console.log(mensaje);
 
 
 
