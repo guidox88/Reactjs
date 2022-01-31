@@ -1,11 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
+import NavBar from './NavBar';
 
 function App() {
 
+  let nombre = "Guido Negrisoli"
 
-
-
+  let style = {
+    color:"red",backgroundColor:"Black"
+  }
 
   return (
     <div className="App">
@@ -22,8 +25,14 @@ function App() {
         >
           Learn React
         </a>
+        
       </header>
-    </div>
+
+      <h1 style={style}>  {nombre} </h1>
+
+      <NavBar/>
+
+    </div> 
   );
 }
 
