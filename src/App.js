@@ -6,6 +6,7 @@ import Accordion from './componentes/Accordion/Accordion';
 import { Footer } from './componentes/Footer';
 import Button from './componentes/UI/Button';
 import Main from './componentes/Main/Main';
+import ItemCount from './componentes/ItemCount';
 
 
 
@@ -18,7 +19,9 @@ function App() {
         dropDown
         className={"navbar navbar-expand-lg navbar-dark bg-primary"}/> 
       <NavBar />
-      
+
+    
+      <ItemCount/>
       
       <Accordion />
       <Button className="btn btn-danger mx-4" text="Cuidado" />

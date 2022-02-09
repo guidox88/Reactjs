@@ -1,6 +1,7 @@
 import React from "react";
 import CartWidget from "./CartWidget";
-import imagenes from './assets/imagenes';
+
+
 
 
 
@@ -11,13 +12,12 @@ let style = {
 
 
 function NavBar() {
-
-  return <>
+   return <>
     <ul style={style} >
 
-      <li col-ml-3><a href="index.html">Inicio</a></li>
+      <li><a href="index.html">Inicio</a></li>
 
-      <li col-ml-4><a href="Nosotros.html">Nosotros</a></li>
+      <li><a href="Nosotros.html">Nosotros</a></li>
 
       <li><a href="Productos.html">Productos</a></li>
 
