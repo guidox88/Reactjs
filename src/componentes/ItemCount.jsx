@@ -17,9 +17,9 @@ const onAdd = () => {
 return (
      <div className="divContador  text-center " >
          <div className="divBtnAddSubst">
-             <button className="btnDismin mx-3" onClick={() => rest()} disable={itemCount === stock ? true : false } > - </button>
+             <button className="btnDismin mx-3" onClick={() => rest()} disabled={itemCount === initial ? true : false } > - </button>
              <span className="spanCtnNumber mx-3">{itemCount}</span>
-             <button className="btnAument mx-3" onClick={() => add()} disable={itemCount === initial ? true : false } > + </button>
+             <button className="btnAument mx-3" onClick={() => add()} disabled={itemCount === stock ? true : false } > + </button>
          </div>
          <div>
             <button className="btnAddtocart" onClick={() => onAdd()}>Añadir al carrito</button>
