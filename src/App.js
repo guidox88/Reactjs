@@ -21,7 +21,7 @@ function App() {
       <NavBar />
 
     
-      <ItemCount/>
+      <ItemCount stock={5} initial={1}  />
       
       <Accordion />
       <Button className="btn btn-danger mx-4" text="Cuidado" />
