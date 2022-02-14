@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useState } from 'react/cjs/react.development';
 
-const ItemListConteiner = ({ greeting}) => {
+const ItemListConteiner = ({greeting}) => {
 
     const data = [{ID:1, nombre:"Mini Lama", precio: 40 ,Stock:40 },{ID:2,nombre:"Lama", precio:70, stock:10}];
 
