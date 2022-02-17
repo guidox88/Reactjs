@@ -1,4 +1,5 @@
 import React from 'react';
+import ApiHarry from './ApiHarry';
 import Item from './Item';
 
 
@@ -29,7 +30,7 @@ const ItemList = ({items}) => {
     <>
     {items.map((item) => ( <Item item={item} key={item.id} />))}
     </>
-  )
+ )
+};
 
-}
 export default ItemList;
