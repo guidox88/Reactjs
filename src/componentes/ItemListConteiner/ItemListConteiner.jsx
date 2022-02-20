@@ -2,35 +2,34 @@ import Item from './Item';
 import ItemList from './ItemList';
 import React, { useState, useEffect } from 'react'
 
-const ItemListConteiner = ({greeting}) => {
+const ItemListConteiner = () => {
 
-    const data = [(<ItemList />)] ;
+    const data = [] ;
 
-    const [info, setInfo] = useState(null);
+    const [items, setItems] = useState([]);
 
   useEffect(() => { 
-
-    const tarea = new Promise ((resolve,reject) => {
-        setTimeout(() =>{ 
+  new Promise((resolve,reject) => {
+        setTimeout(() => { 
            resolve(data);
-      }, 2000);
+      }, 3000);
 
-    }); 
+    }).then((res) => setItems(res)); 
+
+    return () => {
+      setItems([])
+    };
+
+  },[]);
+
+  return (
+    <div className='conteiner-fluid'>
     
- tarea
-    .then((result) => {
-         //aca caen los resultados tipo fullfilled¬ o satisdactorias
-         
-         setInfo(result);
- 
-     }).catch(err => {
-         //esto atrapa cualquier resultado tipo reject o no esperado
-       console.log(err);
-     });
- 
-}, [])
- 
-  return <> {info && info.map((i) => <p>{i.nombre}</p>)}</>
-}
+      <ItemList data={items}/>
+     </div>
+    );
+};
 
 export default ItemListConteiner;
+    
+ 
