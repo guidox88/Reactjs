@@ -7,28 +7,15 @@ import ItemCount from './componentes/ItemCount';
 import ItemList from './componentes/ItemListConteiner/ItemList';
 import ItemListConteiner from './componentes/ItemListConteiner/ItemListConteiner';
 import ApiHarry from './componentes/ItemListConteiner/ApiHarry';
-
+import Rutas from './routes';
 
 
 function App() {
   return (
-
-
-    <Main >
-      
+  <div className="app">
       <NavBar />
-
-      <ApiHarry />
-
-      <ItemListConteiner />
-
-      <ItemCount stock={10} initial={1}  />
-
-      <ItemList />
-
-      <Footer />
-    </Main>
-
+      <Rutas/>
+       </div>
   );
 }
 
