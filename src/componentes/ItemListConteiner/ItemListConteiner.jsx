@@ -35,10 +35,10 @@ const ItemListConteiner = () => {
       setItems([])
     };
 
-  },[ ]);
+  },[]);
 
   return (
-    <div className="conteiner-fluid">
+    <div className="conteiner-fluid w-50">
       <ItemList data={items}/>
      </div>
     );

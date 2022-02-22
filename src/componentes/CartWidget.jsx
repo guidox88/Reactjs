@@ -1,13 +1,13 @@
 import React from 'react';
 import carrito from './assets/png/carrito.png';
+import {Link} from 'react-router-dom';
 
 const CartWidget = () => {
     return (
-        <div className="d-flex  mx-5 ">
-            <img className="w-25" src={carrito} alt=""/>
-
-        </div>
-    )
+    <Link to={"/cart"} className="btn">
+         <img className="w-25" src={carrito} alt=""/>
+     </Link>
+    );
 };
 
 export default CartWidget;
