@@ -16,13 +16,13 @@ function NavBar() {
       <li>
         <NavLink to={"/"}>Inicio</NavLink></li>
 
-      <li><a href="Nosotros.html">Nosotros</a></li>
+      <li>< NavLink to={"Nosotros"}>Nosotros</NavLink></li>
 
-      <li><a href="Productos.html">Productos</a></li>
+      <li><NavLink to={"Productos"}>Productos</NavLink></li>
 
-      <li><a href="Filamentos.html">Filamentos</a></li>
+      <li><NavLink to={"Filamentos"}>Filamentos</NavLink></li>
 
-      <li><a href="Contacto.html">Contacto</a></li>
+      <li><NavLink to={"Contacto"}>Contacto</NavLink></li>
       
       
           <CartWidget />

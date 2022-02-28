@@ -1,14 +1,45 @@
-import React from 'react'
-import { useParams } from 'react-router-dom'
+import React, {useEffect, useState, useContext } from 'react';
+import { useParams } from 'react-router-dom';
+import ItemDetail from './ItemDetail';
+import { CarritoContext } from '../../Context/CarritoProvedor';
+
 
 const ItemDetailConteiner = () => {
 
-   const params = useParams()
-   console.log (params)
+  const {nombre,apellido,edad,dameUnaAlerta} = useContext(CarritoContext)
+  console.log(nombre,apellido,edad,)
 
-  return (
-    <div>{params.id}</div>
-  )
-}
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve({ 
+          id: 1,
+          nombre: "LALAALALALAL",
+          img: "",
+          stock:10 ,
+          precio: 1000,
+          descripcion:"asdasdasdasdsa",
+        });
+      }, 2000);
+    }).then((res) => setData(res));
+
+    return () => {
+      setData({});
+    };
+  }, []);
+
+  return <>
+  {data ? <ItemDetail dameUnaAlerta={dameUnaAlerta} item={data}/> : <h1> ...Cargando</h1>}
+  </>;
+};
+ //  const params = useParams()
+  // console.log (params)
+
+ // return (
+   // <div>{params.id}</div>
+ // )
+//}
 
 export default ItemDetailConteiner

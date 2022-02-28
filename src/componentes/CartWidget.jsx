@@ -5,9 +5,9 @@ import {Link} from 'react-router-dom';
 const CartWidget = () => {
     return (
     <Link to={"/cart"} className="btn">
-         <img className="w-25" src={carrito} alt=""/>
+         <img className="w-25" src={carrito} alt=""/> 0
      </Link>
     );
 };
 
-export default CartWidget;
+export default CartWidget; 
