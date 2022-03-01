@@ -24,7 +24,7 @@ const ItemDetail = ({ item }) => {
                           </div>
                       </div>
                       <div>
-                          {<ItemCount stock={item.stock} initial={1} />}
+                          {<ItemCount item={item}  stock={item.stock} initial={1} />}
                       </div>
                   </div>
               </div>

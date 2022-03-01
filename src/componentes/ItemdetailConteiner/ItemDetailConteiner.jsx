@@ -6,8 +6,8 @@ import { CarritoContext } from '../../Context/CarritoProvedor';
 
 const ItemDetailConteiner = () => {
 
-  const {nombre,apellido,edad,dameUnaAlerta} = useContext(CarritoContext)
-  console.log(nombre,apellido,edad,)
+  const {nombre,apellido,edad} = useContext(CarritoContext)
+  console.log(nombre,apellido,edad)
 
   const [data, setData] = useState(null);
 
@@ -31,7 +31,7 @@ const ItemDetailConteiner = () => {
   }, []);
 
   return <>
-  {data ? <ItemDetail dameUnaAlerta={dameUnaAlerta} item={data}/> : <h1> ...Cargando</h1>}
+  {data ? <ItemDetail item={data}/> : <h1> ...Cargando</h1>}
   </>;
 };
  //  const params = useParams()

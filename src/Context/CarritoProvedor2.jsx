@@ -1,29 +1,20 @@
 
 import React, { createContext , useState } from "react" ;
-import ItemCount from "../componentes/ItemCount";
 
 export const CarritoContext = createContext();
 
 const CarritoProvedor = ({ children }) => {
- //funciones
-    const dameUnaAlerta = (texto) => {
-        alert(texto);
-    };
-
-    const agregarAlCarrito = (item) => {
-        setCarrito([...carrito,item]);
-        console.log (item)
-        
-        
-    }
-
-// variables 
-    let nombre = "Guido";
-    let apellido ="Negrisoli";
-    let edad = 33;
-    let localidad ="Buenos Aires";
 
     const [carrito,setCarrito] = useState([]);
+
+   // addItem (item,cantidad)  //adentro  antes agregar utilizar metodo isInCart , en el caso que no exista, agregar al carrito
+
+  //  removeItem (id) 
+
+  //  clear () //poner el carrito [] en vacio , deberia borrar los productos de carrito
+
+  //  isInCart (id) // si el id del parametro existe en carrito me deberia dar true e caso contrario false
+
   return (
         <CarritoContext.Provider value= {{nombre,apellido,edad,localidad,dameUnaAlerta,agregarAlCarrito,carrito }}>
                   {children}

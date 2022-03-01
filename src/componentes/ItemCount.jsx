@@ -1,19 +1,26 @@
-import React from 'react';
-import { useState } from "react" 
+import React, { useState, useContext } from "react" ; 
+import { CarritoContext } from '../Context/CarritoProvedor';
 
 
-export default function ItemCount ({ stock, initial}) {
+export default function ItemCount ({ item,stock,initial}) {
+    const [itemCount, setItemCount] = useState (initial);
 
-const [itemCount, SetItemCount] = useState (1)
+const {agregarAlCarrito} = useContext(CarritoContext)
 
 const add = () => {
-    SetItemCount(itemCount + 1)
+        if (itemCount < stock) {
+            setItemCount(itemCount + 1);
+        }
 }
 const rest = () => {
-    SetItemCount(itemCount - 1)
-}
+    if (itemCount > 1) {
+        setItemCount (itemCount - 1);
+    }
+};
+
 const onAdd = () => {
     alert(itemCount)
+    console.log (itemCount)
 }
 
 return (
@@ -24,7 +31,10 @@ return (
              <button className="btnAument mx-3" onClick={() => add()} disabled={itemCount === stock ? true : false } > + </button>
          </div>
          <div>
-            <button className="btnAddtocart" onClick={() => onAdd()}>Añadir al carrito</button>
+            <button onClick={()=>agregarAlCarrito(item)} >Añadir al carrito</button>
+         </div>
+         <div >
+             <button onClick={() => onAdd()} > Alert</button>
          </div>
      </div>
 )
