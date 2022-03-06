@@ -1,9 +1,9 @@
 
-import React from 'react';
+import React, { memo } from 'react';
 import { Link } from 'react-router-dom';
 
 
-const Item = ({item}) => {
+const Item = memo(({item}) => {
 
     return <div className= "Card text-center ">
      <div className=" w-50 border border-dark m-1 ">
@@ -17,7 +17,7 @@ const Item = ({item}) => {
        
         </div>
     </div>;
-};
+});
 
 export default Item;
 

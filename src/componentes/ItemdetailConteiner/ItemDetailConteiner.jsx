@@ -1,45 +1,26 @@
-import React, {useEffect, useState, useContext } from 'react';
+import React, {useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import ItemDetail from './ItemDetail';
+import useFireStore from '../../hooks/useFireStore';
 import { CarritoContext } from '../../Context/CarritoProvedor';
 
 
 const ItemDetailConteiner = () => {
 
-  const {nombre,apellido,edad} = useContext(CarritoContext)
-  console.log(nombre,apellido,edad)
+  const {id} = useParams()
 
-  const [data, setData] = useState(null);
+  const {individual,load,getIndividualData} = useFireStore();
 
   useEffect(() => {
-    new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve({ 
-          id: 1,
-          nombre: "LALAALALALAL",
-          img: "",
-          stock:10 ,
-          precio: 1000,
-          descripcion:"asdasdasdasdsa",
-        });
-      }, 2000);
-    }).then((res) => setData(res));
+    getIndividualData({id})
 
-    return () => {
-      setData({});
-    };
-  }, []);
+  }, [])
 
+  
   return <>
-  {data ? <ItemDetail item={data}/> : <h1> ...Cargando</h1>}
+  {load ? <h1> ...Cargando</h1> : <ItemDetail item={individual}/>  }
   </>;
 };
- //  const params = useParams()
-  // console.log (params)
-
- // return (
-   // <div>{params.id}</div>
- // )
-//}
+ 
 
 export default ItemDetailConteiner
